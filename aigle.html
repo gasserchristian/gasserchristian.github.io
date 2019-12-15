@@ -40,15 +40,6 @@
 		L.circleMarker(L.latLng([1433.75, 362.25]),{radius: 8}).addTo(map).bindPopup("Tour de Don, 1998 m");
 
 		/*
-
-		L.polyline([[1165.5, 767.5],[1279.5, 720]], {color: 'red'}).addTo(map).bindPopup("La Dzorniva");
-		L.polyline([[1254, 787],[1360, 715]], {color: 'red'}).addTo(map).bindPopup("La Vachette");
-
-		L.circleMarker(L.latLng([1085.5, 1531.5]),{radius: 8, color: 'green'}).addTo(map).bindPopup("Nax");
-
-		L.polygon([[1264.25, 2259.5],[1263.75, 2325],[1243.75, 2289.5],[1241.75, 2276.25]], {color: 'gray'}).addTo(map).bindPopup("Barrage de la Grande Dixence");
-    */
-
 		var popup = L.popup();
 		function coordPhoto(e) {
 			popup
@@ -57,6 +48,7 @@
 				.openOn(map)
 		}
 		map.on('click',coordPhoto)
+		*/
 
   </script>
 </body>
