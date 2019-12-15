@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Aigle 46.2513472,7.00286 410.2 m</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+
+	<style>
+		html, body {
+		  height: 100%;
+		  margin: 0;
+		}
+		#map {
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+</head>
+<body>
+  <div id='map'></div>
+  <script>
+  	var map = L.map('map', {
+  	  crs: L.CRS.Simple,
+			minZoom: -2
+  	});
+  	var bounds = [[0,0], [2448,3264]];
+  	var image = L.imageOverlay('aigle.jpg', bounds).addTo(map);
+  	map.fitBounds(bounds);
+
+		L.circleMarker(L.latLng([1190.25, 2589]),{radius: 8}).addTo(map).bindPopup("Croix de la L&eacute;, 1873 m");
+		L.circleMarker(L.latLng([1218.875, 2338.75]),{radius: 8}).addTo(map).bindPopup("Grammont, 2172 m");
+		L.circleMarker(L.latLng([1216.4375, 2169.375]),{radius: 8}).addTo(map).bindPopup("La Grande Jumelle, 2215 m");
+		L.circleMarker(L.latLng([1211.8125, 2190.9375]),{radius: 8}).addTo(map).bindPopup("La Petite Jumelle, 2185 m");
+		L.circleMarker(L.latLng([1235.625, 1885.9375]),{radius: 8}).addTo(map).bindPopup("Chambairy, 2202 m");
+		L.circleMarker(L.latLng([1216.625, 1471.375]),{radius: 8}).addTo(map).bindPopup("La Braye, 1788 m");
+		L.circleMarker(L.latLng([1219, 1629.03125]),{radius: 8}).addTo(map).bindPopup("Le Planellet, 1695 m");
+		L.circleMarker(L.latLng([1236.25, 1307.25]),{radius: 8}).addTo(map).bindPopup("Les Cornettes de Bise, 2432 m");
+		L.circleMarker(L.latLng([1433.75, 362.25]),{radius: 8}).addTo(map).bindPopup("Tour de Don, 1998 m");
+
+		/*
+
+		L.polyline([[1165.5, 767.5],[1279.5, 720]], {color: 'red'}).addTo(map).bindPopup("La Dzorniva");
+		L.polyline([[1254, 787],[1360, 715]], {color: 'red'}).addTo(map).bindPopup("La Vachette");
+
+		L.circleMarker(L.latLng([1085.5, 1531.5]),{radius: 8, color: 'green'}).addTo(map).bindPopup("Nax");
+
+		L.polygon([[1264.25, 2259.5],[1263.75, 2325],[1243.75, 2289.5],[1241.75, 2276.25]], {color: 'gray'}).addTo(map).bindPopup("Barrage de la Grande Dixence");
+    */
+
+		var popup = L.popup();
+		function coordPhoto(e) {
+			popup
+				.setLatLng(e.latlng)
+				.setContent(e.latlng.toString())
+				.openOn(map)
+		}
+		map.on('click',coordPhoto)
+
+  </script>
+</body>
+</html>

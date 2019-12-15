@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CRS.Simple example - Leaflet</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+
+	<style>
+		html, body {
+		  height: 100%;
+		  margin: 0;
+		}
+		#map {
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+</head>
+<body>
+  <div id='map'></div>
+  <script>
+  	var map = L.map('map', {
+  	  crs: L.CRS.Simple,
+			minZoom: -2
+  	});
+  	var bounds = [[0,0], [1872,2808]];
+  	var image = L.imageOverlay('ovronnaz.jpg', bounds).addTo(map);
+  	map.fitBounds(bounds);
+		L.circleMarker(L.latLng([1872-450, 1490]),{radius: 8}).addTo(map).bindPopup("Bietschhorn, 3934 m");
+		L.circleMarker(L.latLng([1872-460, 1230]),{radius: 8}).addTo(map).bindPopup("Aletschhorn, 4195 m");
+		L.circleMarker(L.latLng([1872-470, 1370]),{radius: 8}).addTo(map).bindPopup("Breithorn, 3784 m");
+		L.circleMarker(L.latLng([1872-470, 1370]),{radius: 8}).addTo(map).bindPopup("Breithorn, 3784 m");
+		L.circleMarker(L.latLng([1872-545, 2215]),{radius: 8}).addTo(map).bindPopup("Ofenhorn, 3235 m");
+		L.circleMarker(L.latLng([1872-75, 440]),{radius: 8}).addTo(map).bindPopup("Six Armaille, 2427 m");
+		L.circleMarker(L.latLng([1872-600, 1560]),{radius: 8}).addTo(map).bindPopup("Châtillon, 2241 m");
+		L.circleMarker(L.latLng([1872-520, 2420]),{radius: 8}).addTo(map).bindPopup("Ilhorn, 2717 m");
+		L.circleMarker(L.latLng([1872-495, 2625]),{radius: 8}).addTo(map).bindPopup("Brunnethorn, 2952 m");
+		L.circleMarker(L.latLng([1872-485, 2740]),{radius: 8}).addTo(map).bindPopup("Rothorn, 2998 m");
+		L.circleMarker(L.latLng([1872-490, 1150]),{radius: 8}).addTo(map).bindPopup("Sattelhorn, 3723 m");
+		L.circleMarker(L.latLng([1872-520, 1890]),{radius: 8}).addTo(map).bindPopup("Schilthorn, 3122 m");
+		L.circleMarker(L.latLng([1872-800, 1275]),{radius: 8, color: 'red'}).addTo(map).bindPopup("Col Express");
+		L.circleMarker(L.latLng([1872-685, 545]),{radius: 8, color: 'red'}).addTo(map).bindPopup("Petit Pr&eacute;");
+		L.circleMarker(L.latLng([1872-785, 1980]),{radius: 8, color: 'red'}).addTo(map).bindPopup("Châtillon");
+		L.circleMarker(L.latLng([1872-730, 2320]),{radius: 8, color: 'green'}).addTo(map).bindPopup("Vercorin");
+		L.circleMarker(L.latLng([1872-685, 2630]),{radius: 8, color: 'green'}).addTo(map).bindPopup("Nax");
+		L.polygon([[1870-1400, 585],[1870-1785, 1270],[1870-1440, 1900],[1870-1330, 1600]], {color: 'gray'}).addTo(map).bindPopup("Grand Pr&eacute; d'Euloi");
+  </script>
+</body>
+</html>

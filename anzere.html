@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Anzere 46.29957, 7.39639 1601.5 m</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+
+	<style>
+		html, body {
+		  height: 100%;
+		  margin: 0;
+		}
+		#map {
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+</head>
+<body>
+  <div id='map'></div>
+  <script>
+  	var map = L.map('map', {
+  	  crs: L.CRS.Simple,
+			minZoom: -2
+  	});
+  	var bounds = [[0,0], [2448,3264]];
+  	var image = L.imageOverlay('anzere.jpg', bounds).addTo(map);
+  	map.fitBounds(bounds);
+
+		L.circleMarker(L.latLng([2448-1077, 1425]),{radius: 8}).addTo(map).bindPopup("Dent de Perroc, 3676 m");
+		L.circleMarker(L.latLng([2448-1085, 1175]),{radius: 8}).addTo(map).bindPopup("Dent d'Hérens, 4171 m");
+		L.circleMarker(L.latLng([2448-1081, 2560]),{radius: 8}).addTo(map).bindPopup("Le Pleureur, 3703 m");
+		L.circleMarker(L.latLng([1347.25, 2420.5]),{radius: 8}).addTo(map).bindPopup("La Luette, 3548 m");
+		L.circleMarker(L.latLng([1355.5, 2328.75]),{radius: 8}).addTo(map).bindPopup("La Ruinette, 3875 m");
+		L.circleMarker(L.latLng([1363, 2214]),{radius: 8}).addTo(map).bindPopup("Mont Blanc de Cheilon, 3870 m");
+		L.circleMarker(L.latLng([1385.5, 2097]),{radius: 8}).addTo(map).bindPopup("Pointe de Vouasson, 3490 m");
+		L.circleMarker(L.latLng([1387.5, 2045.25]),{radius: 8}).addTo(map).bindPopup("Aiguilles Rouges d'Arolla, 3646 m");
+		L.circleMarker(L.latLng([1373, 1880.5]),{radius: 8}).addTo(map).bindPopup("Mont de l'&Eacute;toile, 3370 m");
+		L.circleMarker(L.latLng([1365.25, 2027.75]),{radius: 8}).addTo(map).bindPopup("Pic d'Artsinol, 2998 m");
+		L.circleMarker(L.latLng([1354.5, 1356]),{radius: 8}).addTo(map).bindPopup("Grande Dent de Veisivi, 3418 m");
+		L.circleMarker(L.latLng([1336, 1397]),{radius: 8}).addTo(map).bindPopup("Petite Dent de Veisivi, 3184 m");
+		L.circleMarker(L.latLng([1338.5, 1283.5]),{radius: 8}).addTo(map).bindPopup("Tete de valpelline, 3802 m");
+		L.circleMarker(L.latLng([1422, 1000]),{radius: 8}).addTo(map).bindPopup("La Maya, 2916 m");
+		L.circleMarker(L.latLng([1449, 570]),{radius: 8}).addTo(map).bindPopup("Mont Noble, 2650 m");
+		L.circleMarker(L.latLng([1412, 468]),{radius: 8}).addTo(map).bindPopup("Tour de Bonvin, 2442 m");
+		L.circleMarker(L.latLng([1392.5, 2760.25]),{radius: 8}).addTo(map).bindPopup("Le M&eacute;tailler, 3213 m");
+		L.circleMarker(L.latLng([1388, 3167]),{radius: 8}).addTo(map).bindPopup("Le Mont Fort, 3329 m");
+
+		L.polyline([[1165.5, 767.5],[1279.5, 720]], {color: 'red'}).addTo(map).bindPopup("La Dzorniva");
+		L.polyline([[1254, 787],[1360, 715]], {color: 'red'}).addTo(map).bindPopup("La Vachette");
+
+		L.circleMarker(L.latLng([1085.5, 1531.5]),{radius: 8, color: 'green'}).addTo(map).bindPopup("Nax");
+
+		L.polygon([[1264.25, 2259.5],[1263.75, 2325],[1243.75, 2289.5],[1241.75, 2276.25]], {color: 'gray'}).addTo(map).bindPopup("Barrage de la Grande Dixence");
+
+		/*
+		var popup = L.popup();
+		function coordPhoto(e) {
+			popup
+				.setLatLng(e.latlng)
+				.setContent(e.latlng.toString())
+				.openOn(map)
+		}
+		map.on('click',coordPhoto)
+		*/
+  </script>
+</body>
+</html>
