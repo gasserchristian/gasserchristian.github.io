@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Saxonne 	46.27987, 7.40611	1046.4 m</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+
+	<style>
+		html, body {
+		  height: 100%;
+		  margin: 0;
+		}
+		#map {
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+</head>
+<body>
+  <div id='map'></div>
+  <script>
+  	var map = L.map('map', {
+  	  crs: L.CRS.Simple,
+			minZoom: -2
+  	});
+  	var bounds = [[0,0], [2448,3264]];
+  	var image = L.imageOverlay('ayent.jpg', bounds).addTo(map);
+  	map.fitBounds(bounds);
+
+		L.circleMarker(L.latLng([1559, 1383]),{radius: 8}).addTo(map).bindPopup("Dent de Nendaz, 2463 m");
+		L.circleMarker(L.latLng([1544, 1216]),{radius: 8}).addTo(map).bindPopup("Pointe de Balavaux, 2456 m");
+		L.circleMarker(L.latLng([1545, 892]),{radius: 8}).addTo(map).bindPopup("Mont Gond, 2669 m");
+		L.circleMarker(L.latLng([1550, 669]),{radius: 8}).addTo(map).bindPopup("Mont Gel&eacute;, 3023 m");
+		L.circleMarker(L.latLng([1487, 1697]),{radius: 8}).addTo(map).bindPopup("Tracouet, 2195 m");
+		L.circleMarker(L.latLng([1411, 2535]),{radius: 8}).addTo(map).bindPopup("Aiguille du Tour, 3542 m");
+		L.circleMarker(L.latLng([1424, 2347]),{radius: 8}).addTo(map).bindPopup("Aiguille de Chardonnet, 3824 m");
+		L.circleMarker(L.latLng([1431, 2120]),{radius: 8}).addTo(map).bindPopup("Aiguille d'Argentiere, 3901 m");
+		L.circleMarker(L.latLng([1432, 2274]),{radius: 8}).addTo(map).bindPopup("Pierre-Avoi, 2473 m");
+		L.circleMarker(L.latLng([1367, 2775]),{radius: 8}).addTo(map).bindPopup("Pointe des Grands, 3101 m");
+
+		L.polygon([[1276.847373, 1845],[1322.885738, 1987],[1281.851543, 2158],[1227.806505, 2301],
+			[1042.614679, 1926],[988.643036, 1788],[1057.709758, 1542]], {color: 'gray'}).addTo(map).bindPopup("Nendaz");
+		L.polygon([[1178, 1156],[1057.601334, 1438],[1308.810676, 1521]], {color: 'gray'}).addTo(map).bindPopup("Saclentse");
+		L.polygon([[1254, 842],[1122, 1242],[1094.694746, 727],[1203.785655, 711]], {color: 'gray'}).addTo(map).bindPopup("Veysonnaz");
+
+		/*
+		var polygonCoor = '';
+		var popup = L.popup();
+		function coordPhoto(e) {
+			polygonCoor+= '[' + e.latlng.lat + ',' + e.latlng.lng + '],';
+			popup
+				.setLatLng(e.latlng)
+				.setContent(polygonCoor)
+				.openOn(map)
+		}
+		map.on('click',coordPhoto)
+		*/
+		
+  </script>
+</body>
+</html>
