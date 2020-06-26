@@ -1,0 +1,190 @@
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../font/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+       local('MaterialIcons-Regular'),
+       url(../font/MaterialIcons-Regular.woff2) format('woff2'),
+       url(../font/MaterialIcons-Regular.woff) format('woff'),
+       url(../font/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+.custom span {
+  background-color: dodgerblue;
+  width: 20px;
+  height: 20px;
+  /* width: 30px;
+  height: 30px; */
+  display: block;
+  border-radius: 50%;
+  opacity: 50%;
+  /* border-radius: 50% 50% 0; */
+  transform: rotate(45deg);
+  border: 1px solid #FFFFFF;
+}
+.custom span:hover {
+  background: darkblue;
+}
+
+html,body {
+  width: 100%; height: 100%;
+  padding: 0; margin: 0;
+  overflow: hidden;
+}
+
+#viewer {
+  width: 100%;
+  height: 100%;
+}
+
+.controls {
+  position: absolute;
+  bottom: 0; left: 0;
+  z-index: 400;
+  padding: 3px;
+  color: gainsboro;
+  user-select: none;
+}
+
+.controls .buttons {
+  margin-right: 3px;
+  padding: 5px;
+  background-color: dimgray;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.edit .edit {
+  background: darkblue;
+}
+.delete .delete {
+  background: darkred;
+}
+.add .add {
+  background: darkolivegreen;
+}
+.attached .attach {
+  display: none;
+}
+
+.modules {
+  position: absolute; z-index: 400;
+  top: 0; right: 0;
+  width: 300px;
+  padding-top: 3px;
+  max-height: 100vh;
+  overflow: auto;
+}
+
+.modules .item {
+  width: 100%;
+  margin-bottom: 3px;
+  border-radius: 8px;
+  background: white;
+  height: 50px;
+  position: relative;
+}
+.modules .item .number {
+  /* position: absolute; */
+  /* top: 50%; */
+  left: 3px;
+  /* transform: translateY(-50%); */
+  border-radius: 50%;
+  background: darkcyan;
+  width: 30px; height: 30px;
+  color: white;
+  font-family: georgia; font-size: 14px;
+  font-weight: bold;
+}
+.modules .item .description {
+  /* position: absolute; */
+  /* top: 50%; */
+  left: 40px;
+  font-family: arial;
+  /* transform: translateY(-50%); */
+}
+.y_centered_absolute {
+  position: absolute; top: 50%;
+  transform: translateY(-50%);
+}
+.centered_absolute {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+.export {
+  display: none;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: white;
+  opacity: 0;
+  z-index: 1000;
+}
+.openExport .export {
+  display: block;
+  /* opacity: 1; */
+}
+
+
+.cross {
+  position: relative;
+  cursor: pointer;
+}
+.cross:after {
+  content: ''; display: block;
+  position: absolute; top: 50%; left: 50%;
+  width: 20px; height: 1px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: black;
+}
+.cross:before {
+  content: ''; display: block;
+  position: absolute; top: 50%; left: 50%;
+  width: 20px; height: 1px;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  background: black;
+}
+.export .close {
+  position: absolute; top: 5px; right: 5px;
+  width: 20px;
+  height: 20px;
+}
+.export .content {
+  width: 100%;
+  max-width: 100px;
+  font-size: 3px;
+  margin: auto;
+  margin-top: 16px;
+}
+img.help {
+  display: none;
+  width: 500px;
+  z-index: 400;
+  padding: 3px;
+  background: #ffffffc4;
+}
